@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+  <meta charset="UTF-8">
+  <title>LOG_IN</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/MyCss.css"/>
+ </head>
+ <body> 
+ 	<div class="w2" id="head">
+ 		<p>Welcome  to  Cjk's  Website</p>
+ 	</div>
+
+ 	<div  class="w" id='base_div'>
+ 		<h1>请登录：</h1> <button class="i_choose" style="margin-right: 135px;margin-left: 5px;" onclick="change(this,0)">以买家身份</button> <button onclick="change(this,1)" class="i_choose active" >以卖家身份</button>
+    	<form id="mform" method="post" action="http://localhost:8021/log/login/seller" style=" width: 200px;text-align:center;">
+  			<div id='div1'>
+  				<h2>你的名字:</h2>
+  				<input type="text" name="user_name" />
+				<h2>你的密码: </h2>
+				<input type="password" name="password"/>
+				<input id="sub" type="submit" name="submit" value="登录"/>
+			</div>
+		</form>
+		<div id='div2'>
+		<p>还没有账号？</p>
+		<a href='register.html'>点此立刻注册!!</a>
+		</div>
+  	</div>
+  	<script>
+  		function change(btn,i)
+  		{
+  			if(i==0)
+  			{
+  				window.location.href="log_in.html"
+  			}
+  			if(i==1)
+  			{
+  				window.location.href="seller_in.html"
+  			}
+  		}
+  	</script>
+ </body>
+</html>

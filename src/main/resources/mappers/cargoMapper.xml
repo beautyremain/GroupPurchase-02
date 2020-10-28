@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.dao.CargoDao">
+    <select id="getAllCargo" resultType="Cargo">
+        select seller,name,remain,price,tips from cargo_list
+    </select>
+    <update id="remainChange">
+        UPDATE `cargo_list` SET `remain` = #{remain} WHERE seller=#{seller} and name=#{name};
+    </update>
+</mapper>

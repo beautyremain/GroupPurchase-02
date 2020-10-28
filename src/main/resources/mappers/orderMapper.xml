@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.dao.OrderDao">
+    <resultMap id="BuyerOrderItemMap" type="com.entity.BuyerOrderItem">
+        <result column="date" property="date" />
+        <result column="name" property="cargo_name" />
+        <result column="count" property="cargo_count" />
+        <result column="price" property="price" />
+        <result column="seller" property="seller" />
+        <result column="tips" property="cargo_tips" />
+        <result column="flag" property="flag" />
+    </resultMap>
+    <resultMap id="SellerOrderItemMap" type="com.entity.SellerOrderItem">
+        <result column="id" property="id" />
+        <result column="date" property="date" />
+        <result column="name" property="cargo_name" />
+        <result column="count" property="cargo_count" />
+        <result column="price" property="price" />
+        <result column="buyer" property="buyer" />
+        <result column="address" property="buyer_address" />
+        <result column="flag" property="flag" />
+    </resultMap>
+    <select id="getAllSellerOrderByName" resultMap="SellerOrderItemMap">
+        select
+        deal_stream.id,
+        deal_stream.date,
+        deal_stream.buyer,
+        deal_stream.name,
+        deal_stream.count,
+        deal_stream.price,
+        buyer_info.address,
+        deal_stream.flag
+         from deal_stream inner join buyer_info where deal_stream.buyer=buyer_info.buyer and seller=#{seller}ORDER BY flag,deal_stream.id desc
+
+    </select>
+    <select id="getAllBuyerOrderByName" resultMap="BuyerOrderItemMap">
+        select deal_stream.date ,
+        deal_stream.name,
+        deal_stream.count,
+        deal_stream.price,
+        deal_stream.seller ,
+        cargo_list.tips ,
+        deal_stream.flag
+		from deal_stream inner join cargo_list on deal_stream.seller=cargo_list.seller and deal_stream.name=cargo_list.name
+		where deal_stream.buyer=#{buyer}
+    </select>
+    <update id="orderConfirm">
+        UPDATE `deal_stream` SET `flag` = 1 WHERE  id=#{id};
+    </update>
+    <select id="insertNewDeal" parameterType="com.entity.Deal">
+        insert into deal_stream(date,seller,buyer,name,count,price) values(#{date},#{seller},#{buyer},#{name},#{count},#{price})
+    </select>
+
+</mapper>

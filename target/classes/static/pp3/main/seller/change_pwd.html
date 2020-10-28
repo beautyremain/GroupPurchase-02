@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personal_page.css"/>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<style>
+			#form
+			{
+				margin-top: 2%;
+				margin-left: 230px;
+				background-color: rgb(255, 255, 255);
+				width: 500px;
+				height: 300px;
+				padding-left: 50px;
+				padding-top: 40px;
+				box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+				 -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+				font-size: 20px;
+
+			}
+			#form input
+			{
+				font-size: 25px;
+				border-radius: 10px;
+				 -webkit-border-radius: 10px;
+				 width:auto;
+			}
+			#form label
+			{
+				font: bold 18px "等线Light";
+				margin-top: 30px;
+			}
+			#form .button
+			{
+				margin-left: 300px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="head">
+			<div class="a_div">
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+			</div>
+			<div id="head_left">
+			</div>
+		</div>
+		<!--head over-->
+		<div id="content" class="clearfix">
+			<div id="left">
+				<ul>
+					<li><a  href="deal_stream.html">交易清单</a></li>
+					<li><a href="seller_cargo.html">你的在售商品</a></li>
+					<li><a  href="cargo_history.html">历史修改记录</a></li>
+					<li><a id="act" href="change_pwd.html">修改密码</a></li>
+			</div>
+			<!--left is over-->
+			<div id="right">
+				<div id="form">
+					<label style="display: block;">新的密码：<input type="text" name="pwd" placeholder="请输入新的密码。。" /></label>	
+					<label><button class="button" onclick="new_pwd(this)">重置</button></label>
+				</div>
+
+				<div id="warndiv"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+		<script src="js/getHead.js"></script>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personal_page.css"/>
+		<style>
+			#right
+			{
+				
+			}
+			.modi
+			{
+				margin-left: 30px;
+			}
+			#add_btn 
+			{
+				margin-left: 800px;
+				font-size:30px;
+			}
+			#gu_btn
+			{
+				
+				font-size:30px;
+			}
+			#tab
+			{
+				/*position: absolute;*/
+				width: 1000px;
+			}
+			#new_cargo
+			{
+				position: absolute;
+				width: 280px;
+				padding: 50px;
+				background-color: green;
+				font-size: 25px;
+				margin-left: 300px;
+				margin-top: 150px;
+			}
+			#new_cargo input
+			{
+				margin-top: 20px;
+				height: 20px;
+			}
+			#tab input
+			{
+				width: 120px;
+				height: 28px;
+				margin-right: 20px;
+				/*margin-left -20px;*/
+			}
+			#tab .edit_div
+			{
+				position: absolute;
+				margin-left: 10px;
+				background-color: white;
+				padding: 20px;
+				border: 1px solid black;;
+			}
+			#tab td
+			{
+				overflow: auto;
+				text-overflow: clip;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<div id="head">
+			<div class="a_div">
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+			</div>
+			<div id="head_left">
+			</div>
+		</div>
+		<!--head over-->
+		<div id="content" class="clearfix">
+			<div id="left">
+				<ul>
+					<li ><a  href="deal_stream.html">交易清单</a></li>
+					<li ><a id="act" href="seller_cargo.html">你的在售商品</a></li>
+					<li><a href="cargo_history.html">历史修改记录</a></li>
+					<li><a href="change_pwd.html">修改密码</a></li>
+				</ul>
+			</div>
+			<!--left is over-->
+			<div id="right">
+				<div hidden="" id="new_cargo">
+					<form action="ca_seller_new.php" method="post" onsubmit="return review()">
+						商品名：<input type="text" class="cargo_detail" name="name" />
+						数量：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="remain" />
+						价格：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="price" />
+						备注：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="tips" />
+						<input type="submit" style="margin-top: 40px; font-size: 25px ;height: 35px;" class="cargo_detail" name="submit" value="提交" />
+						
+					</form>
+					<button style="float: right; margin-top: 20px;" onclick="cancel2(this)">取消</button>
+				</div>						<div id="add_new"> <button id="add_btn" onclick="show()">新建商品</button> <button id="gu_btn" onclick="give_up()">放弃更改</button></div>
+				<table width="90%" class="table" id="tab">
+					<caption>
+						<h2>货物信息</h2>
+					</caption>
+					<thead>
+						<tr>
+							<th>商品名</th>
+							<th>剩余数量</th>
+							<th>价格</th>
+							<th>备注</th>
+							<th>确认按钮</th>
+						</tr>
+					</thead>
+						
+				</table>
+
+				<div id="warndiv"></div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/cargo_list_event.js" ></script>
+		<script src="js/printTable_sellerCargo.js"></script>
+	</body>
+</html>

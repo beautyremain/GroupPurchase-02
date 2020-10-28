@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personal_page.css"/>
+		<style>
+			#right
+			{
+				
+			}
+			.modi
+			{
+				margin-left: 30px;
+			}
+			#add_btn 
+			{
+				margin-left: 800px;
+				font-size:30px;
+			}
+			#gu_btn
+			{
+				
+				font-size:30px;
+			}
+			#tab
+			{
+				/*position: absolute;*/
+				width: 1000px;
+			}
+			#new_cargo
+			{
+				position: absolute;
+				width: 280px;
+				padding: 50px;
+				background-color: green;
+				font-size: 25px;
+				margin-left: 300px;
+				margin-top: 150px;
+			}
+			#new_cargo input
+			{
+				margin-top: 20px;
+				height: 20px;
+			}
+			#tab input
+			{
+				width: 120px;
+				height: 28px;
+				margin-right: 20px;
+				/*margin-left -20px;*/
+			}
+			#tab .edit_div
+			{
+				position: absolute;
+				margin-left: 10px;
+				background-color: white;
+				padding: 20px;
+				border: 1px solid black;;
+			}
+			#tab td
+			{
+				overflow: auto;
+				text-overflow: clip;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<div id="head">
+			<div class="a_div">
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+			</div>
+			<div id="head_left">
+			</div>
+		</div>
+		<!--head over-->
+		<div id="content" class="clearfix">
+			<div id="left">
+				<ul>
+					<li ><a id="act" href="deal_stream.html">交易清单</a></li>
+					<li ><a href="check_history.html">审核商品</a></li>
+					<li><a href="init_pwd.html">初始用户密码</a></li>
+				</ul>
+			</div>
+			<!--left is over-->
+			<div id="right">
+				<div style="float: right;" id="filter">
+					<input style="font-size: 20px;" type="text" name="condition" id="condition" value="" placeholder="输入where后语句"/>
+					<button style="margin-right: 20px;" onclick="search()" >查询</button>
+				</div>
+				<table width="90%" class="table" id="tab">
+					<caption>
+						<h2>数据流</h2>
+					</caption>
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>日期</th>
+							<th>买家</th>
+							<th>卖家</th>
+							<th>商品名</th>
+							<th>数量</th>
+							<th>价格</th>
+							<th>订单状态</th>
+						</tr>
+					</thead>
+				</table>
+
+				<div id="warndiv"></div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/printTable_stream.js" ></script>
+		<script type="text/javascript" src="js/root_event.js" ></script>
+	</body>
+</html>

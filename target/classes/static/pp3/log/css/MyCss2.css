@@ -1,0 +1,76 @@
+.w2
+{
+	width: 570px;
+	margin: 0 auto;
+}
+.w
+{
+	width: 800px;
+	margin: 0 auto;
+}
+#mform
+{
+	margin-top: 50px;
+	
+}
+body
+{
+	background: url(../img/bg1.jpg) repeat-x;
+}
+#head
+{
+	margin:0 auto;
+	background-color: rgb(10,10,10);
+	font:bold 120px "Edwardian Script ITC";
+	text-align:center;
+	color: white;
+}
+#base_div
+{
+	background: url(../img/inputBG.png) no-repeat;
+	padding-top: 100px;
+	margin-top: 100px ;
+	padding-left: 50px;
+	height: 512px;
+
+}
+#check
+{
+	float: right;
+	margin-right: 100px;
+	margin-top: 23px;
+	font-size: 20px;
+}
+#base_div .textInput
+{
+	display: block;
+	font-size: 25px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+#notice
+{
+	
+	float: right;
+	margin-top: 50px;
+	margin-right: 20px;
+	background-color: white;
+	height: 120px;
+	width: 120px;
+	font: bold 15px "华文中宋";
+	color: red;
+}
+#reg
+{
+	margin-left: 230px;
+	margin-top: 30px;
+	font: bold 30px castellar;
+	border: none;
+	color: #A52A2A;
+}
+#tips
+{
+	margin-top:-100px;
+	margin-left: 100px;
+	font-size: 20px;
+}

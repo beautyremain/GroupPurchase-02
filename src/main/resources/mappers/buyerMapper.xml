@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BuyerDao">
+    <select id="checkName" resultType="Buyer">
+        select * from buyer_info  where buyer=#{buyer}
+    </select>
+    <select id="checkUser" resultType="Buyer">
+        select * from buyer_info  where buyer=#{buyer} and password=#{password}
+    </select>
+    <select id="findAll" resultType="com.entity.Buyer">
+        select * from buyer_info
+    </select>
+    <!--    返回值类型是Student-->
+    <!--    这里的擦描述类型指的是传过来的参数类型-->
+    <select id="findById" parameterType="java.lang.Long" resultType="Buyer">
+        select * from buyer_info where id=#{id}
+    </select>
+
+    <select id="save" parameterType="com.entity.Buyer">
+        insert into buyer_info (buyer,password,address) values (#{name},#{password},#{address})
+    </select>
+    <update id="update" parameterType="com.entity.Buyer">
+        update buyer_info
+        <set>
+            <if test="password!=null">password=#{password}</if>
+            <if test="address!=null">address=#{address}</if>
+        </set>
+        <where>
+            buyer=#{name}
+        </where>
+
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete form buyer_info where id=#{id}
+    </delete>
+</mapper>

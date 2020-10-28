@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personal_page.css"/>
+		<style>
+			/* #form
+			{
+				margin: 150px;
+				background-color: white;
+				width: 300px;
+				height: 300px;
+				padding: 50px;
+			} */
+			#form
+			{
+				float: right;
+				margin-top: 2%;
+				margin-right: 130px;
+				background-color: rgb(255, 255, 255);
+				width: 500px;
+				height: 300px;
+				padding-left: 50px;
+				padding-top: 40px;
+				box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+				 -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+				font-size: 20px;
+
+			}
+			#form input
+			{
+				font-size: 25px;
+				border-radius: 10px;
+				 -webkit-border-radius: 10px;
+				 width:auto;
+			}
+			#form label
+			{
+				font: bold 18px "等线Light";
+				margin-top: 30px;
+			}
+			#form button
+			{
+				margin-top:10px;
+				margin-left: 200px;
+			}
+			#select
+			{
+				margin-left: 100px;
+				margin-top: 100px;
+				height: 200px;
+				width: 270px;
+				background-color: rgb(213, 231, 214);
+				/* opacity: 0.1; */
+			}
+			#select button
+			{
+				float: left;
+				font-size: 20px;
+				width: 150px;
+				height:40;
+				margin-left: 5px;
+				margin-top: 40px;
+				/* background-color: rgb(231, 223, 223); */
+				box-shadow:5px 4px 5px #999;
+				 -webkit-border-radius: .20em;   
+				/* -moz-border-radius: .5em;   */
+				border-radius: .7em;  
+			}
+			#select .a
+			{
+
+				background-color: white;
+				box-shadow:none;
+				border-width: 1px;
+				
+			}
+			#select div
+			{
+				height:50%;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<div id="head">
+			<div class="a_div">
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+			</div>
+			<div id="head_left">
+			</div>
+		</div>
+		<!--head over-->
+		<div id="content" class="clearfix">
+			<div id="left">
+				<ul>
+					<li ><a href="deal_stream.html">交易清单</a></li>
+					<li ><a href="check_history.html">审核商品</a></li>
+					<li><a id="act" href="init_pwd.html">初始用户密码</a></li>
+				</ul>
+			</div>
+			<!--left is over-->
+			<div id="right">
+
+				<div id="form">
+					<label>买家<input type="radio" name="radio" value="buyer" checked=""/></label><label>卖家<input type="radio" name="radio" value="seller" /> </label>
+					<label style="display: block;">名字<br/><input type="text" name="user" /></label>	
+					<label><button class="button" onclick="get_init()">重置</button></label>
+				</div>
+				<div id="select">
+					<div id="s1"><button class="a"  onclick="change_pwd(this)">初始用户密码</button></div><div id="s2"><button onclick="new_seller(this)">新建卖家</button></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function new_seller(btn)
+			{
+				btn.classList.add("a");
+				btn.parentNode.previousElementSibling.children[0].classList.remove("a");
+				var str="";
+				str+='<label style="display: block;"> new_seller:<input type="text" name="user" /></label><label><button class="button" onclick="get_new()">提交</button></label>'
+				$("#form").html(str);
+			}
+			function change_pwd(btn)
+			{
+				btn.classList.add("a");
+				btn.parentNode.nextElementSibling.children[0].classList.remove("a");
+				var str="";
+				str+='<label>买家<input type="radio" name="radio" value="buyer" checked=""/></label><label>卖家<input type="radio" name="radio" value="seller" /> </label><label style="display: block;">名字<br/><input type="text" name="user" /></label>	<label><button class="button" onclick="get_init()">重置</button></label>';
+				$("#form").html(str);
+			}
+			function get_init()
+			{
+
+				var data={};
+				data['identity']=$('input[type=radio][name=radio]:checked').val();
+				data['user']=$('input[type=text][name=user]').val();
+				if(confirm("init "+data['user']+"?"))
+				{					
+					$.get(
+						"init_user.php",data,function(e)
+						{
+							alert("php:"+e);
+							if(e=="success")
+							{
+								setTimeout("location.reload()",2000);
+							}
+						}
+					);
+				}
+			}
+			function get_new()
+			{
+				var data={};
+				data['seller']=$('input[type=text][name=user]').val();
+				if(confirm("init "+data['seller']+"?"))
+				{					
+					$.get(
+						"new_seller.php",data,function(e)
+						{
+							alert("php:"+e);
+							if(e=="success")
+							{
+								setTimeout("location.reload()",2000);
+							}
+						}
+					);
+				}
+			}
+		</script>
+		<script type="text/javascript" src="js/init_pwd.js" ></script>
+		<!--<script type="text/javascript" src="js/root_event.js" ></script>-->
+	</body>
+</html>

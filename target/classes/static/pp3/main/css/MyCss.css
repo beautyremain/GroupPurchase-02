@@ -1,0 +1,82 @@
+.w
+{
+	width: 570px;
+	margin: 0 auto;
+}
+.w2
+{
+
+	margin:0 auto;
+	background-color: blue;
+}
+#mform
+{
+	margin-top: 50px;
+	
+}
+body
+{
+	background: url(../img/bg1.jpg) repeat-x;
+}
+#head
+{
+	font:bold 120px "Edwardian Script ITC";
+	color: white;
+}
+#base_div
+{
+	background: url(../img/inputBG.png) no-repeat;
+	padding-top: 20px;
+	margin-top: 100px ;
+	padding-left: 50px;
+	height: 512px;
+
+}
+#base_div h1
+{
+	font: bold 30px "微软雅黑";
+	color: purple;
+	margin-top: 50px;
+}
+#mform input
+{
+
+	margin-bottom: 10px;
+	font-size: 33px;
+}
+#sub
+{
+	margin-left: 160px;
+	border: none;
+}
+#sub:hover
+{
+	font: bold 33px "微软雅黑";
+	color: orangered;
+}
+#mform h2
+{
+	margin-bottom: 5px;
+	font: bold 20px "微软雅黑";
+}
+#div2
+{
+	float: right;
+	margin-right: 150px;
+	padding-left: 10px ;
+}
+#div2 p
+{
+	margin-bottom: 5px;
+	color: gray;
+}
+#div2 a
+{
+	text-decoration: none;
+	font: bold 20px "微软雅黑";
+}
+#div2 a:hover
+{
+	text-decoration: underline;
+	color: red;
+}

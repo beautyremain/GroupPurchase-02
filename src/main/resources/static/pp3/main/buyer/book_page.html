@@ -1,0 +1,82 @@
+<!--finish 2020 10-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personal_page.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/purchase-btn.css"/>
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<div id="head">
+			<div class="a_div">
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+				<a href="">321</a>
+				<a href="">123</a>
+			</div>
+			<div id="head_left">
+			<h1>Dear<span> abc</span> from c,welcom back</h1>
+			<a href="http://localhost:8021/log/logout">注销登录</a>
+			</div>
+		</div>
+		<!--head over-->
+		<div id="content" class="clearfix">
+			<div id="left">
+				<ul>
+					<li><a href="info_page.html">购买信息</a></li>
+					<li><a id="act" href="book_page.html">商品清单</a></li>
+					<li><a href="change_info.html">修改个人信息</a></li>
+			</div>
+			<!--left is over-->
+			<div id="right">
+				<table width="90%" class="table" id="tab">
+        <caption>
+            <h2>所有商品信息</h2>
+        </caption>
+        <thead>
+            <tr>
+                <th>卖家</th>
+                <th>物资名</th>
+                <th>剩余数量/斤</th>
+                <th>价格 元/斤</th>
+                <th>备注</th>
+				<th>立刻购买</th>
+            </tr>
+        </thead>
+		
+    </table>
+			</div>
+		</div>
+			<script>
+				function t()
+				{
+					console.log(this);
+				}
+				function plus(btn){
+						if(btn.previousElementSibling.textContent>9)
+						{
+							alert("超出上限");
+						}
+						else
+						{
+							btn.previousElementSibling.textContent++;
+						}
+				}
+				function minus(btn){
+						if(btn.nextElementSibling.textContent==1)
+						{
+							alert("购买数量不可以小于1");
+						}
+						else
+						{
+							btn.nextElementSibling.textContent--;
+						}
+				}
+			</script>
+		 <script src="js/book_page.js"></script>
+	</body>
+</html>

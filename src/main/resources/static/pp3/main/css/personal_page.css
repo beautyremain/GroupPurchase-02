@@ -1,0 +1,194 @@
+.clearfix:before,
+.clearfix:after
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+#head
+{
+	color: rgb(173, 157, 157);
+	background-color:rgb(0, 5, 5);
+	height: 130px;
+	width: 1500px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+#head h1
+{
+	font: 30px "Trajan Pro";
+	text-align: -moz-center;
+}
+#head_left
+{
+	background-color: rgb(0, 5, 5);
+	width: 600px;
+	padding-left:10px;
+	padding-top: 10px;
+	height: auto;
+}
+#head_left span
+{
+	font-size: 60px;
+}
+#head_left a
+{
+	color: whitesmoke;
+	font-size: 20px;
+	text-decoration: none;
+	margin-left: 450px;
+	border: dotted;
+	border-color: gray;
+}
+#head_left a:hover
+{
+	text-decoration: underline;
+	color: red;
+}
+#head .a_div
+{
+	float:right;
+}
+.a_div
+{
+	font: bold 40px georgia;
+	margin-right: 30px;
+	/*background-color: red;*/
+	margin-top: 20px;
+}
+.a_div a
+{
+	color: white;
+	margin-right: 20px;
+	border-left: dashed;
+	text-decoration: none;
+}
+.a_div a:hover
+{
+	color: red;
+}
+#left
+{
+	float: left;
+	height: 780px;
+	width: 240px;
+	background-color: rgb(203, 207, 205);
+	padding-top: 20px;
+	padding-left: 40px;
+	padding-right: 20px;
+	margin-right: 5px;
+}
+#content
+{
+	width: 1500px;
+	margin: 0 auto;
+	background-color:white;
+}
+#left li
+{
+	border-bottom: 1px dashed #999;
+	margin-bottom: 30px;
+	font: bold 30px "等线light";
+}
+#left li a
+{
+	text-decoration: none;
+	margin-left: 10px;
+	color: black;
+}
+#left li a:hover
+{
+	color: red;
+}
+#act
+{
+	color: 	#4169E1 !important;
+	text-decoration: underline !important;
+}
+#right
+{
+	float: left;
+	width:1090px;
+	height: 650px;
+	background-color: rgb(213, 231, 214);
+	padding-top: 50px;
+	padding-left: 100px;
+	padding-bottom: 100px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+.table h2
+{
+	font: bold 40px "等线light";
+	margin-bottom: 30px;
+}
+
+table
+{
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+	table-layout: fixed;
+}
+table td, table th
+{
+    border: 1px solid #cad9ea;
+    color: #666;
+    height: 2em;
+    width: 31em;
+    white-space:nowrap;
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+table thead th
+{
+    background-color: rgb(215, 231, 233);
+    width: 100px;
+}
+table tr:nth-child(odd)
+{
+    background: #fff;
+}
+table tr:nth-child(even)
+{
+    background: #F5FAFA;
+}
+#warndiv p
+{
+	margin-left: 350px;
+	font: bold 40px "华文行楷";
+}
+.active
+{
+	text-decoration: underline;
+	
+}
+div
+{
+	-webkit-border-radius: 5px;
+    border-radius: 10px;
+}
+button
+{
+	outline:none;
+}
+.button {  
+    display: inline-block;  
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */  
+    *display: inline;  
+    vertical-align: baseline;  
+    margin: 0 2px;  
+    outline: none;  
+    cursor: pointer;  
+    text-align: center;  
+    text-decoration: none;  
+    font: 14px/100% Arial, Helvetica, sans-serif;  
+    padding: .5em 2em .55em;  
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);  
+    -webkit-border-radius: .5em;   
+    -moz-border-radius: .5em;  
+    border-radius: .5em;  
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+}  

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+	</body>
+	<script>
+		var info;
+		window.onload=function(){
+			$.ajax({
+				type:"get",
+				url:"http://localhost:8021/test/t2",
+				success:function(e){
+					info=e;
+					//let res=JSON.parse(e)
+					//console.log(res);
+					//window.location.href=e;
+				}
+			})
+		}
+	</script>
+</html>
