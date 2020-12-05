@@ -109,15 +109,15 @@
 						data['condition']=key;
 						console.log(data);
 						
-						$.get('edit_checking.php',data,function(d){
+						$.get('http://localhost:8021/root/edit_check',data,function(d){
 							if(flag==0)
 							{
-								console.log("php answer:"+d);
+								console.log("answer:"+d);
 								location.reload();							
 							}
 							if(flag==1)
 							{
-								console.log("php answer:"+d);
+								console.log("answer:"+d);
 							}
 						});
 					}

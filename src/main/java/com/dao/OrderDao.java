@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 public interface OrderDao {
     public List<BuyerOrderItem> getAllBuyerOrderByName(@Param("buyer") String buyer);
-    public void insertNewDeal(Deal deal);
+
     public List<SellerOrderItem> getAllSellerOrderByName(@Param("seller") String seller);
     public void orderConfirm(@Param("id") String id);
 }

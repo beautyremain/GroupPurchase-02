@@ -50,7 +50,7 @@ function pbtnEvent(btn)
 	{
 		$.post("http://localhost:8021/seller/payCheck",data,function(d){
 			alert(d);
-			if(d=="购买请求提交成功！请尽快联系商家付款")
+			if(d=="已确认付款，请及时送货")
 			{
 				location.reload();
 			}

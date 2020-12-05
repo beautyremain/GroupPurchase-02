@@ -41,7 +41,7 @@ public class LoginController {
             {
                 session.setAttribute("identity","root");
                 session.setAttribute("user_name",name);
-                response.sendRedirect("/pp3/log/seller_in.html");//edit to personal page root
+                response.sendRedirect("/pp3/main/root/deal_stream.html");//edit to personal page root
             }
             else {
                 session.setAttribute("identity", identity);

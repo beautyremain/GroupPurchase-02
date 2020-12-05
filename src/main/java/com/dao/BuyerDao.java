@@ -15,7 +15,7 @@ import java.util.List;
 @Component
 public interface BuyerDao {
     public List<Buyer> findAll();
-    public Buyer findById(Long id);
+    public List<Buyer> findByName(String name);
     public void save(Buyer buyer);
     public void update(Buyer buyer);
     public void deleteById(Long id);

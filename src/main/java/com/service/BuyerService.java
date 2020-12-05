@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface BuyerService {
     public List<com.entity.Buyer> findAll();
-    public com.entity.Buyer findById(Long id);
+    public List<com.entity.Buyer> findByName(String name);
     public void save(com.entity.Buyer student);
     public void updateInfo(com.entity.Buyer student);
     public void deleteById(Long id);

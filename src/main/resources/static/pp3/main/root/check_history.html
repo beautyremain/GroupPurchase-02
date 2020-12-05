@@ -50,6 +50,7 @@
 					<li ><a href="deal_stream.html">交易清单</a></li>
 					<li ><a id="act" href="#">审核商品</a></li>
 					<li><a href="init_pwd.html">初始用户密码</a></li>
+				</ul>
 			</div>
 			<!--left is over-->
 			<div id="right">
@@ -109,15 +110,15 @@
 						data['condition']=key;
 						console.log(data);
 						
-						$.get('edit_checking.php',data,function(d){
+						$.get('http://localhost:8021/root/edit_check',data,function(d){
 							if(flag==0)
 							{
-								console.log("php answer:"+d);
+								console.log("answer:"+d);
 								location.reload();							
 							}
 							if(flag==1)
 							{
-								console.log("php answer:"+d);
+								console.log("answer:"+d);
 							}
 						});
 					}
@@ -136,7 +137,7 @@
 						$('#show_hide').html("<button class='button' onclick='showcheck()'>批量修改</button>");
 						$('#select').css("width","80px");
 						$('.tlast').each(function(){
-						   $(this).html("<button id=\"test\" onclick=\"check(this,\"pass\")\">通过</button><button style=\"margin-left: 20px;\" id=\"test2\" onclick=\"check(this,\"deny\")\">拒绝</button>");
+						   $(this).html("<button id=\"test\" onclick=\"check(this,\"pass \" )\"> 通过</button><button style=\"margin-left: 20px;\" id=\"test2\" onclick=\"check(this,\"deny\")\">拒绝</button>");
 						});
 						$("#chooseall").attr("hidden","true");
 						$("#option").attr("hidden","true");

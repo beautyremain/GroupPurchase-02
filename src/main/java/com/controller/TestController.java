@@ -5,7 +5,9 @@ package com.controller;/*
 
 import com.dao.BuyerDao;
 import com.entity.BuyerOrderItem;
+import com.service.RootService;
 import com.serviceImpl.BuyerServiceImpl;
+import com.serviceImpl.RootServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,8 @@ import java.util.List;
 public class TestController {
     @Autowired
     BuyerServiceImpl buyerService;
+    @Autowired
+    RootServiceImpl rootService;
     @RequestMapping("/t")
     public void index(HttpServletResponse response) throws IOException {
         response.sendRedirect("/pp3/log/log_in.html");
@@ -29,6 +33,7 @@ public class TestController {
     public List<BuyerOrderItem> index2(){
        return buyerService.getAllOrderByName("cxy");
     }
+
 
     @RequestMapping("/t3/{para}")
     public void index3(@PathVariable String para, HttpServletResponse response) throws IOException {

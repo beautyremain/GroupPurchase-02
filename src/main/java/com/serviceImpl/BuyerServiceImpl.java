@@ -5,6 +5,7 @@ package com.serviceImpl;/*
 
 import com.dao.BuyerDao;
 import com.dao.CargoDao;
+import com.dao.DealDao;
 import com.dao.OrderDao;
 import com.entity.BuyerOrderItem;
 import com.entity.Cargo;
@@ -25,14 +26,17 @@ public class BuyerServiceImpl implements BuyerService {
 
     @Autowired
     private CargoDao cargoDao;
+
+    @Autowired
+    private DealDao dealDao;
     @Override
     public List<com.entity.Buyer> findAll() {
         return buyerDao.findAll();
     }
 
     @Override
-    public com.entity.Buyer findById(Long id) {
-        return buyerDao.findById(id);
+    public List<com.entity.Buyer> findByName(String name) {
+        return buyerDao.findByName(name);
     }
 
     @Override
@@ -73,7 +77,7 @@ public class BuyerServiceImpl implements BuyerService {
 
     @Override
     public void insertNewDeal(Deal deal) {
-        orderDao.insertNewDeal(deal);
+        dealDao.insertNewDeal(deal);
     }
 
     @Override

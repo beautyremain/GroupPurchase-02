@@ -144,9 +144,9 @@
 				if(confirm("init "+data['user']+"?"))
 				{					
 					$.get(
-						"init_user.php",data,function(e)
+						"http://localhost:8021/root/init_user",data,function(e)
 						{
-							alert("php:"+e);
+							alert("result:"+e);
 							if(e=="success")
 							{
 								setTimeout("location.reload()",2000);
@@ -162,9 +162,9 @@
 				if(confirm("init "+data['seller']+"?"))
 				{					
 					$.get(
-						"new_seller.php",data,function(e)
+						"http://localhost:8021/root/new_seller",data,function(e)
 						{
-							alert("php:"+e);
+							alert("result:"+e);
 							if(e=="success")
 							{
 								setTimeout("location.reload()",2000);

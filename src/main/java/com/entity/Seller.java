@@ -6,9 +6,9 @@ package com.entity;/*
 import lombok.Data;
 
 @Data
-public class Seller {
-    private int id;
-    private String  seller;
+public class Seller extends User {
+    private long id;
+    private String name;
     private String password;
 
 }

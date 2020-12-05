@@ -7,4 +7,19 @@
     <update id="remainChange">
         UPDATE `cargo_list` SET `remain` = #{remain} WHERE seller=#{seller} and name=#{name};
     </update>
+    <select id="getCheckList" resultType="CheckCargoItem">
+        SELECT date,seller,name,remain,price,tips,c_flag from cargo_list_checking ORDER BY c_flag desc,id desc
+    </select>
+    <update id="checkList" parameterType="com.entity.CheckCargoItem">
+        update cargo_list_checking set c_flag=#{c_flag} where seller=#{seller} and name=#{name} and c_flag=3
+    </update>
+    <select id="getOneCargo" parameterType="com.entity.Cargo" resultType="Cargo">
+        select * from cargo_list where name=#{name} and seller=#{seller}
+    </select>
+    <update id="insertCargo" parameterType="com.entity.Cargo">
+        insert into cargo_list(seller,name,remain,price,tips) values(#{seller},#{name},#{remain},#{price},#{tips})
+    </update>
+    <update id="updateCargo" parameterType="com.entity.Cargo">
+        UPDATE cargo_list SET remain=#{remain},price=#{price},tips=#{tips} WHERE seller=#{seller} and name=#{name}
+    </update>
 </mapper>

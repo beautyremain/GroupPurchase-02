@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Data
-public class Buyer implements Serializable{
+public class Buyer extends User {
     private long id;
     private String name;
     private String password;

@@ -47,8 +47,6 @@
     <update id="orderConfirm">
         UPDATE `deal_stream` SET `flag` = 1 WHERE  id=#{id};
     </update>
-    <select id="insertNewDeal" parameterType="com.entity.Deal">
-        insert into deal_stream(date,seller,buyer,name,count,price) values(#{date},#{seller},#{buyer},#{name},#{count},#{price})
-    </select>
+
 
 </mapper>
