@@ -10,6 +10,9 @@
     <select id="getCheckList" resultType="CheckCargoItem">
         SELECT date,seller,name,remain,price,tips,c_flag from cargo_list_checking ORDER BY c_flag desc,id desc
     </select>
+    <select id="oneSellerCheckList" resultType="CheckCargoItem">
+        SELECT date,name,remain,price,c_flag from cargo_list_checking where seller=#{seller} ORDER BY c_flag desc,id desc
+    </select>
     <update id="checkList" parameterType="com.entity.CheckCargoItem">
         update cargo_list_checking set c_flag=#{c_flag} where seller=#{seller} and name=#{name} and c_flag=3
     </update>
@@ -21,5 +24,17 @@
     </update>
     <update id="updateCargo" parameterType="com.entity.Cargo">
         UPDATE cargo_list SET remain=#{remain},price=#{price},tips=#{tips} WHERE seller=#{seller} and name=#{name}
+    </update>
+    <select id="getSellerCargo" resultType="Cargo">
+        SELECT name,remain,price,tips from cargo_list where seller=#{seller}
+    </select>
+    <select id="checkLast" parameterType="CheckCargoItem" resultType="CheckCargoItem">
+        select name from cargo_list_checking where seller=#{seller} and name=#{name} and c_flag=3
+    </select>
+    <update id="coverOldEdit" parameterType="CheckCargoItem">
+        update cargo_list_checking set date=#{date},remain=#{remain},price=#{price},tips=#{tips} where seller=#{seller} and name=#{name} and c_flag=3
+    </update>
+    <update id="newEditRequest" parameterType="CheckCargoItem">
+        insert into cargo_list_checking(date,seller,name,remain,price,tips) values(#{date},#{seller},#{name},#{remain},#{price},#{tips})
     </update>
 </mapper>

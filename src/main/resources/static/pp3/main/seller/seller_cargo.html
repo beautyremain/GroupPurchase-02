@@ -92,11 +92,12 @@
 			<!--left is over-->
 			<div id="right">
 				<div hidden="" id="new_cargo">
-					<form action="ca_seller_new.php" method="post" onsubmit="return review()">
+					<form action="http://localhost:8021/seller/new_cargo" method="post" onsubmit="return review()">
 						商品名：<input type="text" class="cargo_detail" name="name" />
 						数量：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="remain" />
 						价格：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="price" />
 						备注：<input type="text" class="cargo_detail" style="margin-left: 25px;" name="tips" />
+						<input type='text' name='date' hidden="true" class='text' />
 						<input type="submit" style="margin-top: 40px; font-size: 25px ;height: 35px;" class="cargo_detail" name="submit" value="提交" />
 						
 					</form>

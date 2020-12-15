@@ -60,7 +60,7 @@ function confirmEvent(btn)
 		{
 			console.log(key+":"+data[key]);
 		}
-	$.post("./ca_seller_edit.php",data,function(d){
+	$.post("http://localhost:8021/seller/edit_cargo",data,function(d){
 		alert(d);
 		location.reload();
 	});
@@ -72,6 +72,8 @@ function review()
 	var f=form_div[0].children[0];
 	var str=["商品名：","数量：","价格：","备注："];
 	var s="";
+	var time=new Date();
+	f.children[4].value=time.toLocaleDateString();
 	for(var i=0;i<4;i++)
 	{
 	    s+=str[i]+f.children[i].value+",";

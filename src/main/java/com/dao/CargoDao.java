@@ -21,4 +21,9 @@ public interface CargoDao {
     public List<Cargo> getOneCargo(Cargo cargo);
     public void insertCargo(Cargo cargo);
     public void updateCargo(Cargo cargo);
+    public List<Cargo> getSellerCargo(String seller);
+    public List<CheckCargoItem> checkLast(CheckCargoItem checkCargoItem);
+    public void coverOldEdit(CheckCargoItem checkCargoItem);
+    public void newEditRequest(CheckCargoItem checkCargoItem);
+    public List<CheckCargoItem> oneSellerCheckList(String seller);
 }
